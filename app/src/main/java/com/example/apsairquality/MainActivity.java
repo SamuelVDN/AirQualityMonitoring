@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Methods method = new Methods();
     OpenMeteo client = new OpenMeteo();
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

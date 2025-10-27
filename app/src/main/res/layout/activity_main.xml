@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
+    android:foregroundTint="#000000"
     tools:context=".MainActivity">
 
 
@@ -14,10 +15,26 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:background="#625C95"
-        app:layout_constraintHeight_percent="0.4"
+        app:layout_constraintHeight_percent="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
+
+        <FrameLayout
+            android:id="@+id/frameLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#396A4F"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHeight_percent="0.3"
+            tools:layout_editor_absoluteX="0dp">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/bench" />
+        </FrameLayout>
 
         <SearchView
             android:id="@+id/searchView"
@@ -37,7 +54,8 @@
             android:id="@+id/EstateList"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="#E0E0E2"
+            android:background="#FFFFFF"
+            android:foregroundTint="#000000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.4"
             app:layout_constraintHorizontal_bias="0.5"
@@ -47,14 +65,12 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginBottom="66dp"
+            android:layout_width="288dp"
+            android:layout_height="110dp"
+            android:layout_marginBottom="140dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.3"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintWidth_percent="0.7">
 
             <TextView
@@ -76,13 +92,15 @@
                 app:layout_constraintVertical_bias="0.5" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout9"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="#625C95"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#A4A4A4"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
         app:layout_constraintHeight_percent="0.3"
         tools:layout_editor_absoluteX="-16dp">
 
@@ -101,7 +119,7 @@
             app:layout_constraintHorizontal_bias="0.515"
             app:layout_constraintStart_toEndOf="@+id/constraintLayout7"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.134"
+            app:layout_constraintVertical_bias="0.571"
             app:layout_constraintWidth_percent="0.28"
             app:srcCompat="@drawable/baseline_search_24" />
 
@@ -110,9 +128,9 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
-            android:background="#E0E0E2"
+            android:background="#A4A4A4"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHeight_percent="0.8"
+            app:layout_constraintHeight_percent="1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.6">
@@ -121,6 +139,7 @@
                 android:id="@+id/constraintLayout3"
                 android:layout_width="247dp"
                 android:layout_height="26dp"
+                android:background="#FFFFFF"
                 app:layout_constraintBottom_toTopOf="@+id/constraintLayout4"
                 app:layout_constraintHeight_percent="0.15"
                 app:layout_constraintStart_toStartOf="parent"
@@ -164,6 +183,7 @@
                 android:id="@+id/constraintLayout5"
                 android:layout_width="247dp"
                 android:layout_height="26dp"
+                android:background="#FFFFFF"
                 app:layout_constraintBottom_toTopOf="@+id/constraintLayout6"
                 app:layout_constraintHeight_percent="0.15"
                 app:layout_constraintStart_toStartOf="parent"
@@ -207,6 +227,7 @@
                 android:id="@+id/constraintLayout4"
                 android:layout_width="0dp"
                 android:layout_height="26dp"
+                android:background="#FFFFFF"
                 app:layout_constraintBottom_toTopOf="@+id/constraintLayout5"
                 app:layout_constraintHeight_percent="0.15"
                 app:layout_constraintStart_toStartOf="parent"
@@ -250,6 +271,7 @@
                 android:id="@+id/constraintLayout6"
                 android:layout_width="247dp"
                 android:layout_height="26dp"
+                android:background="#FFFFFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintHeight_percent="0.15"
                 app:layout_constraintStart_toStartOf="parent"
@@ -264,7 +286,7 @@
                     android:layout_marginStart="20dp"
                     android:fontFamily="@font/alata"
                     android:foregroundTint="#F8F8F8"
-                    android:text="Qualidade:   "
+                    android:text="Status:   "
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -290,6 +312,29 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="0dp"
+        android:background="#645F5F"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout9"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        tools:layout_editor_absoluteX="1dp">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#645F5F"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </FrameLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
