@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints">
 
-        <FrameLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/frameLayout2"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -33,18 +33,39 @@
                 android:id="@+id/imageView3"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/bench" />
-        </FrameLayout>
+                app:srcCompat="@drawable/bench"
+                tools:layout_editor_absoluteX="22dp"
+                tools:layout_editor_absoluteY="-5dp" />
+
+            <ImageButton
+                android:id="@+id/Askit"
+                android:layout_width="115dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginBottom="36dp"
+                android:backgroundTint="#00E0E0E2"
+                android:fontFamily="@font/alata"
+                android:scaleType="fitCenter"
+                android:scaleX="-1"
+                android:textColor="#1D1B1B"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintWidth_percent="0.28"
+                app:srcCompat="@drawable/pigeon" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <SearchView
             android:id="@+id/searchView"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:background="#E0DFE2"
+            android:background="#C0BDD0"
             android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.2"
+            app:layout_constraintHeight_percent="0.1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.183"
@@ -79,10 +100,10 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/alata"
                 android:gravity="center"
-                android:text="Escolha um Estado"
+                android:text="Escolha um Estado acima e aperte o pombo"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="#FFFFFF"
-                android:textSize="32sp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -103,25 +124,6 @@
         app:layout_constraintBottom_toTopOf="@+id/frameLayout"
         app:layout_constraintHeight_percent="0.3"
         tools:layout_editor_absoluteX="-16dp">
-
-        <ImageButton
-            android:id="@+id/Revealer"
-            android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:backgroundTint="#E0E0E2"
-            android:fontFamily="@font/alata"
-            android:scaleType="fitCenter"
-            android:textColor="#1D1B1B"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.515"
-            app:layout_constraintStart_toEndOf="@+id/constraintLayout7"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.571"
-            app:layout_constraintWidth_percent="0.28"
-            app:srcCompat="@drawable/baseline_search_24" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout7"
@@ -286,7 +288,7 @@
                     android:layout_marginStart="20dp"
                     android:fontFamily="@font/alata"
                     android:foregroundTint="#F8F8F8"
-                    android:text="Status:   "
+                    android:text="Qualidade:   "
                     android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                     android:textSize="18sp"
                     android:textStyle="bold"
@@ -311,9 +313,10 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="0dp"
@@ -323,7 +326,21 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
         tools:layout_editor_absoluteX="1dp">
 
-    </FrameLayout>
+        <ImageButton
+            android:id="@+id/revealer"
+            android:layout_width="95dp"
+            android:layout_height="100dp"
+            android:backgroundTint="#00E0E0E2"
+            android:fontFamily="@font/alata"
+            android:scaleType="fitCenter"
+            android:textColor="#1D1B1B"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintWidth_percent="0.28"
+            app:srcCompat="@drawable/jornal"
+            tools:layout_editor_absoluteX="-3dp"
+            tools:layout_editor_absoluteY="-14dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout
         android:id="@+id/frameLayout"

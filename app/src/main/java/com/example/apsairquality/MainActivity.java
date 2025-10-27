@@ -2,10 +2,12 @@ package com.example.apsairquality;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.*;
 
 import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.*;
@@ -18,7 +20,7 @@ import Data.*;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageButton btn1;
+    ImageButton btn1, btn2;
     TextView DisplayLocation, DisplayMP2_5, DisplayMP10, DisplayCO2, DisplayStatus;
     SearchView searchView;
     ListView listView;
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     Methods method = new Methods();
     OpenMeteo client = new OpenMeteo();
 
-    @SuppressLint("MissingInflatedId")
+    @SuppressLint({"MissingInflatedId", "ClickableViewAccessibility"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -43,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.EstateList);
         States = new ArrayList<>();
 
-        btn1 = findViewById(R.id.Revealer);
+        btn1 = findViewById(R.id.Askit);
+        btn2 = findViewById(R.id.revealer);
 
         DisplayLocation = findViewById(R.id.locationGet);
         DisplayMP2_5 = findViewById(R.id.Particules2Get);
@@ -98,13 +101,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+
+
         btn1.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-
                 String state = searchView.getQuery().toString();
-
+                DisplayLocation.setTextSize(36);
                 for (String trial : Data.keySet()) {
                     if (trial.equalsIgnoreCase(state)) {
                         DisplayLocation.setText("Buscando...");
@@ -153,6 +158,25 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             }
+        });
+
+        btn2.setOnClickListener(v -> {
+            new AlertDialog.Builder(this)
+                    .setTitle("Informações")
+                    .setMessage("PM10 e PM2,5 são tipos de material particulado (MP), ou poluição do ar, classificados pelo tamanho de suas partículas.\n"+
+                            "PM10 são particulas um pouco maiores que as PM2,5 que podem causar problemas respiratórios. enquanto as particulas"+
+                            "PM2,5 são bem mais pequenas, e por serem pequenas elas entram diretamente no sistema respiratorio, causando diversos problemas para saude\n")
+                    .setPositiveButton("OK", (dialog, which) -> {
+                        dialog.dismiss();
+
+                        new AlertDialog.Builder(this)
+                                .setTitle("Informações")
+                                .setMessage("já o dióxido de carbono (CO2) é um dos principais gases causadores do efeito estufa e caso se encontre em altas elavações"+
+                                "como acima de 1000 ppm (partes por milhões) ele se torna prejudicial para a saude")
+                                .setPositiveButton("Entendi", (dialog2, which2) -> dialog2.dismiss())
+                                .show();
+                    })
+                    .show();
         });
     }
 }
